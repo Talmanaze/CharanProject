@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Welcome to OpenShift</title>
+
+</head>
+<body>
+
+<h1>3x3 Determinant Calculator</h1>
+<!-- Links to the 2x2 determinant -->
+<a href="/">Click here to access the 2x2 determinnant calculator.</a>
+
+ <!-- draws an example matrix for reference -->
+  <p>
+    The elements of the 3x3 matrix are arranged as follows:<br>
+    <table>
+      <tr>
+        <td>a</td>
+        <td>b</td>
+        <td>c</td>
+      </tr>
+      <tr>
+        <td>d</td>
+        <td>e</td>
+        <td>f</td>
+      </tr>
+      <tr>
+        <td>g</td>
+        <td>h</td>
+        <td>i</td>
+      </tr>
+    </table>
+  </p>
+
+
+ <!-- Creates the forms for user input -->
+
+  <form>
+    <label for="a">Enter value for a: </label><br>
+    <input type="number" id="a" name="a"><br>
+    <label for="b">Enter value for b: </label><br>
+    <input type="number" id="b" name="b"><br>
+    <label for="c">Enter value for c: </label><br>
+    <input type="number" id="c" name="c"><br>
+    <label for="d">Enter value for d: </label><br>
+    <input type="number" id="d" name="d"><br>
+    <label for="e">Enter value for e: </label><br>
+    <input type="number" id="e" name="e"><br>
+    <label for="f">Enter value for f: </label><br>
+    <input type="number" id="f" name="f"><br>
+    <label for="g">Enter value for g: </label><br>
+    <input type="number" id="g" name="g"><br>
+    <label for="h">Enter value for h: </label><br>
+    <input type="number" id="h" name="h"><br>
+    <label for="i">Enter value for i: </label><br>
+    <input type="number" id="i" name="i"><br><br>
+    <button type="button" onclick="calculate()">Calculate Determinant</button>
+  </form> 
+  
+  <p id="result"></p>
+
+<!-- Does the arithmetic -->
+
+  <script>
+    function calculate() {
+      // Get values from form
+      var a = document.getElementById("a").value;
+      var b = document.getElementById("b").value;
+      var c = document.getElementById("c").value;
+      var d = document.getElementById("d").value;
+      var e = document.getElementById("e").value;
+      var f = document.getElementById("f").value;
+      var g = document.getElementById("g").value;
+      var h = document.getElementById("h").value;
+      var i = document.getElementById("i").value;
+      // Calculate determinant
+  var determinant = a * (e * i - f * h) - b * (d * i - f * g) + c * (d * h - e * g);
+
+      // Display result
+      document.getElementById("result").innerHTML = "The determinant is: " + determinant;
+    }
+  </script>
+</body>
+</html>
